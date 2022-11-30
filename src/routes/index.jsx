@@ -10,9 +10,9 @@ import UnauthenticatedGuard from 'guards/UnauthenticatedGuard'
 import AuthLayout from 'layouts/AuthLayout'
 // import MainLayout from 'layouts/MainLayout'
 // import SystemLayout from 'layouts/SystemLayout'
-// import ForgotPassWordForm from 'pages/Auth/ForgotPassword'
+import ForgotPassWordForm from 'pages/Auth/ForgotPassword'
 import Login from 'pages/Auth/Login'
-// import Register from 'pages/Auth/Register'
+import Register from 'pages/Auth/Register'
 // import BookAppointment from 'pages/BookAppointment'
 // import AddClinic from 'pages/Clinic/AddClinic'
 // import ClinicManagement from 'pages/Clinic/ClinicManagement'
@@ -93,8 +93,8 @@ function RoutesComponent() {
                 <Route element = {<UnauthenticatedGuard />}>
                     <Route element = {<AuthLayout />}>
                         <Route path = {path.login} element = {<Login />}/>
-                        {/* <Route path = {path.register} element = {<Register />} /> */}
-                        {/* <Route path = {path.forgotPassword} element = {<ForgotPassWordForm />} /> */}
+                        <Route path = {path.register} element = {<Register />} />
+                        <Route path = {path.forgotPassword} element = {<ForgotPassWordForm />} />
                     </Route>
                 </Route>
                 {/* <Route path={path.returnPayment} element = {<PaymentReturn />} /> */}
