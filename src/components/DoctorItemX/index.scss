@@ -1,0 +1,62 @@
+@import '_setting.scss';
+.doctorItem{
+    background-color: #ffffff;
+    .listColumn-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    &__container {
+        border: 2px solid #F1F5F9;
+        border-radius: 4px;
+        padding: 20px;
+    }
+    &__content {
+        margin-bottom: 10px;
+        display: flex;
+        gap: 20px;
+        &-img {
+            width: 120px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        &-main {
+            span {
+                display: block;
+            }
+            &-position {
+                font-size: 14px;
+                font-weight: 500;
+            }
+            &-name {
+                font-size: 18px;
+                font-weight: 600;
+                color: $primary-color;
+                margin-bottom: 10px;
+                &:hover {
+                    color: $hover-color;
+                }
+            }
+        }
+    }
+    &__action {
+        &--column {
+            margin-top: auto;
+        }
+        &-link {
+            color: $primary-color;
+            &:hover {
+                color: $hover-color;
+            }
+        }
+        button {
+            border: none;
+            font-weight: 600;
+            background-color: #F3F8FE;
+            padding: 12px 20px;
+
+
+        }
+    }
+}
