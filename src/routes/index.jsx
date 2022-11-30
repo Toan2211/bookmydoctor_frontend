@@ -17,8 +17,8 @@ import Register from 'pages/Auth/Register'
 // import AddClinic from 'pages/Clinic/AddClinic'
 // import ClinicManagement from 'pages/Clinic/ClinicManagement'
 // import UpdateClinic from 'pages/Clinic/UpdateClinic'
-// import DetailDoctor from 'pages/DetailDoctor'
-// import DetailSpecialist from 'pages/DetailSpecialist'
+import DetailDoctor from 'pages/DetailDoctor'
+import DetailSpecialist from 'pages/DetailSpecialist'
 // import AddDoctor from 'pages/Doctor/AddDoctor'
 // import DoctorManagement from 'pages/Doctor/DoctorManagement'
 // import UpdateDoctor from 'pages/Doctor/UpdateDoctor'
@@ -31,7 +31,7 @@ import Profile from 'pages/Profile'
 // import AddSpecialist from 'pages/Specialist/AddSpecialist'
 // import EditSpecialist from 'pages/Specialist/EditSpecialist'
 // import SpecialistManagement from 'pages/Specialist/SpecialistManagement'
-// import DetailHospital from 'pages/DetailHospital'
+import DetailHospital from 'pages/DetailHospital'
 // import ScheduleDoctorManagement from 'pages/Schedule/ScheduleDoctorManagement'
 // import AddSchedule from 'pages/Schedule/AddSchedule'
 // import AppointmentManagement from 'pages/Appointment/AppointmentManagement'
@@ -48,9 +48,9 @@ function RoutesComponent() {
             <Routes>
                 <Route element = {<MainLayout />}>
                     <Route path = {path.home} element = {<HomePage />}/>
-                    {/* <Route path = {path.detailDoctor} element = {<DetailDoctor />}/>
+                    <Route path = {path.detailDoctor} element = {<DetailDoctor />}/>
                     <Route path={path.detailSpecialist} element = {<DetailSpecialist />} />
-                    <Route path = {path.detailHospital} element = {<DetailHospital />} /> */}
+                    <Route path = {path.detailHospital} element = {<DetailHospital />} />
                  </Route>
                {/* <Route path={path.headerClinic} element = {<HeaderClinicList />}/>
                 <Route path = {path.headerDoctor} element = {<HeaderDoctorList />}/>
