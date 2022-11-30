@@ -4,11 +4,11 @@ import { path } from 'constants/path'
 // import HeaderClinicList from 'components/Header/components/HeaderClinicList'
 // import HeaderDoctorList from 'components/Header/components/HeaderDoctorList'
 // import HeaderSpecialist from 'components/Header/components/HeaderSpecialist'
-// import AuthenticatedGuard from 'guards/AuthenticatedGuard'
+import AuthenticatedGuard from 'guards/AuthenticatedGuard'
 // import SystemAuthenticated from 'guards/SystemAuthenticated'
 import UnauthenticatedGuard from 'guards/UnauthenticatedGuard'
 import AuthLayout from 'layouts/AuthLayout'
-// import MainLayout from 'layouts/MainLayout'
+import MainLayout from 'layouts/MainLayout'
 // import SystemLayout from 'layouts/SystemLayout'
 import ForgotPassWordForm from 'pages/Auth/ForgotPassword'
 import Login from 'pages/Auth/Login'
@@ -22,12 +22,12 @@ import Register from 'pages/Auth/Register'
 // import AddDoctor from 'pages/Doctor/AddDoctor'
 // import DoctorManagement from 'pages/Doctor/DoctorManagement'
 // import UpdateDoctor from 'pages/Doctor/UpdateDoctor'
-// import HomePage from 'pages/HomePage'
+import HomePage from 'pages/HomePage'
 // import AddHospital from 'pages/Hospital/AddHospital'
 // import HospitalManagement from 'pages/Hospital/HospitalManagement'
 // import UpdateHospital from 'pages/Hospital/UpdateHospital'
 // import PatientList from 'pages/Patient/PatientList'
-// import Profile from 'pages/Profile'
+import Profile from 'pages/Profile'
 // import AddSpecialist from 'pages/Specialist/AddSpecialist'
 // import EditSpecialist from 'pages/Specialist/EditSpecialist'
 // import SpecialistManagement from 'pages/Specialist/SpecialistManagement'
@@ -46,13 +46,13 @@ function RoutesComponent() {
     return (
         <BrowserRouter>
             <Routes>
-                {/* <Route element = {<MainLayout />}>
+                <Route element = {<MainLayout />}>
                     <Route path = {path.home} element = {<HomePage />}/>
-                    <Route path = {path.detailDoctor} element = {<DetailDoctor />}/>
+                    {/* <Route path = {path.detailDoctor} element = {<DetailDoctor />}/>
                     <Route path={path.detailSpecialist} element = {<DetailSpecialist />} />
-                    <Route path = {path.detailHospital} element = {<DetailHospital />} />
-                </Route>
-                <Route path={path.headerClinic} element = {<HeaderClinicList />}/>
+                    <Route path = {path.detailHospital} element = {<DetailHospital />} /> */}
+                 </Route>
+               {/* <Route path={path.headerClinic} element = {<HeaderClinicList />}/>
                 <Route path = {path.headerDoctor} element = {<HeaderDoctorList />}/>
                 <Route path = {path.headerSpecialist} element = {<HeaderSpecialist />}/>
                 <Route element = {<SystemAuthenticated />}>
@@ -81,15 +81,15 @@ function RoutesComponent() {
                         <Route path = {path.revenueManagement} element = {<RevenueManagement />}/>
                         <Route path = {path.dashBoard} element = {<Dashboard />} />
                     </Route>
-                </Route>
+                </Route> */}
                 <Route element ={<AuthenticatedGuard />}>
-                    <Route path={path.messageApp} element = {<MesageApp />}/>
+                    {/* <Route path={path.messageApp} element = {<MesageApp />}/> */}
                     <Route element = {<MainLayout />}>
                         <Route path = {path.profile} element = {<Profile />}/>
-                        <Route path = {path.bookAppointment} element = {<BookAppointment />}/>
-                        <Route path = {path.myAppointment} element = {<AppointmentManager />} />
+                        {/* <Route path = {path.bookAppointment} element = {<BookAppointment />}/>
+                        <Route path = {path.myAppointment} element = {<AppointmentManager />} /> */}
                     </Route>
-                </Route> */}
+                </Route>
                 <Route element = {<UnauthenticatedGuard />}>
                     <Route element = {<AuthLayout />}>
                         <Route path = {path.login} element = {<Login />}/>
