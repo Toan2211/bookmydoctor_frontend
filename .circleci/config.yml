@@ -44,7 +44,7 @@ workflows:
   push:
     jobs:
       - test
-      - build:
+      - deploy:
           requires:
             - test
           filters:
