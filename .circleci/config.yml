@@ -15,33 +15,15 @@ jobs:
           name: Lint
           command: npm run lint
   build:
-    working_directory: ~/repo
     docker:
       - image: cimg/node:16.10
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: npm
       - run:
-          name: Update NPM
-          command: "sudo npm install -g npm"
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install Dependencies
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: Build React App
+          name: Run build
           command: npm run build
-      - save_cache:
-          key: app-build-cache-{{ .Branch }}
-          paths:
-            - ./build
-      - run:
-          name: Deploy to Netlify
-          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build
 
 workflows:
   push:
@@ -50,7 +32,3 @@ workflows:
       - build:
           requires:
             - test
-          filters:
-            branches:
-              only:
-                - develop
