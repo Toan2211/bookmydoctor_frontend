@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaClinicMedical } from 'react-icons/fa'
 import './index.scss'
 function DashboardItem({ count, name, icon }) {
     return (
