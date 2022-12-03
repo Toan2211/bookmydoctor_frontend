@@ -14,15 +14,12 @@ jobs:
       - run:
           name: Lint
           command: npm run lint
-  build:
-    working_directory: ~/repo
+  deploy:
     docker:
       - image: cimg/node:16.10
+    working_directory: ~/repo
     steps:
       - checkout
-      - run:
-          name: Update NPM
-          command: "sudo npm install -g npm"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -47,7 +44,7 @@ workflows:
   push:
     jobs:
       - test
-      - build:
+      - deploy:
           requires:
             - test
           filters:
