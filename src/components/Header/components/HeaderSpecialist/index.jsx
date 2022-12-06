@@ -1,5 +1,5 @@
 import specialistApi from 'api/specialistApi'
-// import SpecialistItem from 'pages/HomePage/components/SpecialistList/components/SpecialistItem'
+import SpecialistItem from 'pages/HomePage/components/SpecialistList/components/SpecialistItem'
 import React, { useEffect, useState } from 'react'
 import { GrFormPreviousLink } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom'
@@ -32,7 +32,7 @@ function HeaderSpecialist() {
                 </div>
                 <ul className="headerLinkComponent__list">
                     {
-                        {/* data.map (specialist => <SpecialistItem data={specialist} key = {specialist.id} mode = "column"/>) */}
+                        data.map (specialist => <SpecialistItem data={specialist} key = {specialist.id} mode = "column"/>)
                     }
                 </ul>
             </div>

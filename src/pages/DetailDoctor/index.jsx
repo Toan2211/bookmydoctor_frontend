@@ -3,7 +3,6 @@ import Loading from 'components/Loading'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import BookTimeTable from './components/BookTimeTable'
-import DoctorReviews from './components/DoctorReviews'
 import DoctorProfile from './DoctorProfile'
 
 function DetailDoctor() {
@@ -27,7 +26,6 @@ function DetailDoctor() {
             <div className="detailDoctor__container">
                 <DoctorProfile doctor = {doctor} />
                 <BookTimeTable doctor = {doctor} />
-                <DoctorReviews />
             </div>
         </div>
     )

@@ -19,6 +19,7 @@ import PieChart from './PieChart'
 function Dashboard() {
     const [isLoading, setIsLoading] = useState(true)
     const [revenueByTime, setRevenueByTime] = useState([])
+    // eslint-disable-next-line no-unused-vars
     const [listTime, setListTime] = useState(() => getArrDateInYear())
     const [date, setDate] = useState(() => new Date())
     const [countItems, setCountItems] = useState({
