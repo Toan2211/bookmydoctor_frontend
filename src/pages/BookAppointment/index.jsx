@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './index.scss'
 import { useForm } from 'react-hook-form'
 import { useSelector } from 'react-redux'
@@ -19,10 +19,12 @@ import doctorApi from 'api/doctorApi'
 import Loading from 'components/Loading'
 import appointmentApi from 'api/appointmentApi'
 import { toast } from 'react-toastify'
+import { SocketContext } from 'App'
 import { path } from 'constants/path'
 
 function BookAppointment() {
     const navigate = useNavigate()
+    const socket = useContext(SocketContext)
     const [isLoading, setIsLoading] = useState(true)
     const idSchedule = useParams().id
     const [scheduleDetail, setScheduleDetail] = useState({})
@@ -84,7 +86,9 @@ function BookAppointment() {
                 toast.success('Tạo cuộc hẹn thành công', {
                     position: toast.POSITION.BOTTOM_RIGHT
                 })
-                alert(respone)
+                respone.notification.forEach(element => {
+                    socket.emit('createNotify', element)
+                })
                 navigate(path.myAppointment)
             } catch (err) {
                 return err.message
