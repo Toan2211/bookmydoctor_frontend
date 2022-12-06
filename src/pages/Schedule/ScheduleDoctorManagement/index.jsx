@@ -162,15 +162,9 @@ function ScheduleDoctorManagement() {
                         <div>
                             <button
                                 className="btnSuccess"
-                                onClick={toggleShowAddSchedule}
-                            >
-                                Thêm lịch khám mới
-                            </button>
-                            <button
-                                className="btnSuccess"
                                 onClick={toggleShowAddMultiSchedule}
                             >
-                                Thêm nhiều lịch khám mới
+                                Thêm lịch khám mới
                             </button>
                         </div>
                     )}
