@@ -1,6 +1,6 @@
 import appointmentApi from 'api/appointmentApi'
 import Pagination from 'components/Pagination'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import convertTZ7Str from 'utils/convertTZ7Str'
@@ -13,6 +13,7 @@ import SearchInput from 'components/SearchInput'
 import { useDebounce } from 'hooks/useDebounce'
 import ReactDatePicker from 'react-datepicker'
 import strftime from 'strftime'
+import { SocketContext } from 'App'
 const options = [
     { value: '', label: 'Tất cả' },
     { value: 'NEW', label: 'Chờ xử lí' },
@@ -24,6 +25,7 @@ const options = [
 
 ]
 function AppointmentManagement() {
+    const socket = useContext(SocketContext)
     const [listAppointment, setListAppointment] = useState([])
     const [pagination, setPagination] = useState({})
     const userData = useSelector(state => state.user.profile)
@@ -115,7 +117,10 @@ function AppointmentManagement() {
                     position: toast.POSITION.BOTTOM_RIGHT,
                     autoClose: 2000
                 })
-                alert(respone)
+                respone.message.forEach(element => {
+                    if (element !== {})
+                        socket.emit('createNotify', element)
+                })
             })()
         }
         catch (err) {
@@ -170,7 +175,10 @@ function AppointmentManagement() {
                     position: toast.POSITION.BOTTOM_RIGHT,
                     autoClose: 2000
                 })
-                alert(respone)
+                respone.message.forEach(element => {
+                    if (element !== {})
+                        socket.emit('createNotify', element)
+                })
             })()
         }
         catch (err) {
@@ -199,7 +207,10 @@ function AppointmentManagement() {
                     position: toast.POSITION.BOTTOM_RIGHT,
                     autoClose: 2000
                 })
-                alert(respone)
+                respone.message.forEach(element => {
+                    if (element !== {})
+                        socket.emit('createNotify', element)
+                })
             })()
         }
         catch (err) {
