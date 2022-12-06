@@ -13,8 +13,7 @@ function App() {
     const { user } = useSelector(state => state)
     const dispatch = useDispatch()
 
-    const socket = useMemo(
-        () => io('localhost:3001', { transports: ['websocket'] }), [])
+    const socket = useMemo(() => io('https://bookmydoctor.onrender.com', { transports: ['websocket'] }), [])
     useEffect(() => {
         if (token) {
             dispatch(
