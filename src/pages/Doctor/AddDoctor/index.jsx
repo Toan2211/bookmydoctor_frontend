@@ -104,6 +104,9 @@ function AddDoctor() {
 
         })()
     }, [])
+    useEffect(() => {
+        document.title = 'Thêm bác sĩ'
+    }, [])
     return (
         <div className="addDoctor">
             <div className="addDoctor__container">

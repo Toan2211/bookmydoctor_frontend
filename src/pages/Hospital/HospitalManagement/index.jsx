@@ -58,6 +58,9 @@ function HospitalManagement() {
             }
         })()
     }, [queryParams])
+    useEffect(() => {
+        document.title = 'Quản lí bệnh viện'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className="hospitalManagement">

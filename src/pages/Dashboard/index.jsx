@@ -123,6 +123,9 @@ function Dashboard() {
         setDate(month)
         getRevenueAllSpecialties(month)
     }
+    useEffect(() => {
+        document.title = 'Tổng quan'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className='dashboard'>

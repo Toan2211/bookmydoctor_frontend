@@ -42,7 +42,7 @@ function Login() {
         }
     }
     useEffect(() => {
-        document.title = 'Login'
+        document.title = 'Đăng nhập'
     }, [])
     return (
         <div className="authform">

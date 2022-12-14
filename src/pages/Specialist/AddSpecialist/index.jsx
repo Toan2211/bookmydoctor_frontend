@@ -3,7 +3,7 @@ import specialistApi from 'api/specialistApi'
 import InputField from 'components/InputFiled'
 import PreviewUploadImg from 'components/PreviewUploadImg'
 import { path } from 'constants/path'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -50,6 +50,9 @@ function AddSpecialist() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Thêm chuyên khoa'
+    }, [])
     return (
         <div className="addSpecialist">
             <div className="addSpecialist__container">

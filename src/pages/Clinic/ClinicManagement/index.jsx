@@ -59,6 +59,9 @@ function ClinicManagement() {
             }
         })()
     }, [queryParams])
+    useEffect(() => {
+        document.title = 'Quản lí phòng khám'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className="clinicManagement">

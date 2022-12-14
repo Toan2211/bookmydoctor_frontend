@@ -91,10 +91,15 @@ function BookAppointment() {
                 })
                 navigate(path.myAppointment)
             } catch (err) {
-                return err.message
+                toast.error(err.message, {
+                    position: toast.POSITION.BOTTOM_RIGHT
+                })
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Đặt lịch khám'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className="bookAppointment">

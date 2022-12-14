@@ -38,7 +38,7 @@ function ForgotPassWordForm() {
         })()
     }
     useEffect(() => {
-        document.title = 'Forgot Password'
+        document.title = 'Quên mật khẩu'
     }, [])
     return (
         <div className="authform">

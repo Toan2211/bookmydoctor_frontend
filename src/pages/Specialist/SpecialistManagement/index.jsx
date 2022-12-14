@@ -16,6 +16,9 @@ function SpecialistManagement() {
             setIsLoading(false)
         })()
     }, [])
+    useEffect(() => {
+        document.title = 'Quản lí chuyên khoa'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className="specialistManagement">

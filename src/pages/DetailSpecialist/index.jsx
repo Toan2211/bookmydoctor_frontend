@@ -21,6 +21,9 @@ function DetailSpecialist() {
             }
         })()
     }, [id])
+    useEffect(() => {
+        document.title = dataSpecialty ? dataSpecialty.name : ''
+    }, [dataSpecialty])
     if (isLoading) return <Loading />
     return (
         <div className="detailSpecialist">

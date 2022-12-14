@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import * as yup from 'yup'
 import './index.scss'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -55,6 +55,9 @@ function UpdateClinic() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Cập nhật phòng khám'
+    }, [])
     return (
         <div className="updateClinic">
             <div className="updateClinic__container">

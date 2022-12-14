@@ -42,7 +42,7 @@ function BannerSearch() {
             <div className="bannerSearch__container">
                 <div className="bannerSearch__content">
                     <div className="bannerSearch__title">
-                        <h1>Ứng dụng tìm kiếm bác sĩ</h1>
+                        <h1>Ứng dụng đặt lịch bác sĩ</h1>
                         <span>
                             Giải pháp y tế thông minh giúp tối ưu kết
                             nối, chăm sóc sức khỏe tốt hơn cho cả bạn

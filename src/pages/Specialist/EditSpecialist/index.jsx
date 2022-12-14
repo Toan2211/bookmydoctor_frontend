@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -52,6 +52,9 @@ function EditSpecialist() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Cập nhật chuyên khoa'
+    }, [])
     return (
         <div className="editSpecialist">
             <div className="editSpecialist__container">

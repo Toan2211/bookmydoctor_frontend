@@ -3,7 +3,7 @@ import hospitalApi from 'api/hospitalApi'
 import InputField from 'components/InputFiled'
 import PreviewUploadImg from 'components/PreviewUploadImg'
 import { path } from 'constants/path'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -54,6 +54,9 @@ function AddHospital() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Thêm bệnh viện'
+    }, [])
     return (
         <div className="addHospital">
             <div className="addHospital__container">

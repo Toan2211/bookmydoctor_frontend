@@ -22,6 +22,9 @@ function DetailHospital() {
             }
         })()
     }, [id])
+    useEffect(() => {
+        document.title = data ? data.name : ''
+    }, [data])
     if (isLoading) return <Loading />
     return (
         <div className="detailClinic">

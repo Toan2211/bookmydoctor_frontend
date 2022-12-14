@@ -89,6 +89,9 @@ function PatientList() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Quản lí bệnh nhân'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className="patientManagement">
