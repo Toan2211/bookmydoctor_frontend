@@ -3,7 +3,7 @@ import clinicApi from 'api/clinicApi'
 import InputField from 'components/InputFiled'
 import PreviewUploadImg from 'components/PreviewUploadImg'
 import { path } from 'constants/path'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
@@ -54,6 +54,9 @@ function AddClinic() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Thêm phòng khám'
+    }, [])
     return (
         <div className="addClinic">
             <div className="addClinic__container">

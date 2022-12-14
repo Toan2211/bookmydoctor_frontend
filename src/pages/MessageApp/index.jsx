@@ -216,6 +216,9 @@ function MesageApp() {
     useEffect(() => {
         messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
     }, [listMessageChat])
+    useEffect(() => {
+        document.title = 'Nhắn tin'
+    }, [])
     return (
         <div className="messageApp">
             <div className="messageApp__container">

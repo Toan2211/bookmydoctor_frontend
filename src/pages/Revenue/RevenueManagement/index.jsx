@@ -51,6 +51,9 @@ function RevenueManagement() {
         navigate(`?${queryString.stringify(filters)}`)
     }
     useEffect(() => {
+        document.title = 'Quản lí doanh thu'
+    }, [])
+    useEffect(() => {
         (async () => {
             try {
                 if (userRole === 'ROLE_DOCTOR') {

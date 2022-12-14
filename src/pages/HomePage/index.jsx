@@ -8,7 +8,7 @@ import TopHospitals from './components/TopHospitals'
 
 function HomePage() {
     useEffect(() => {
-        document.title = 'Home Page'
+        document.title = 'Trang chủ'
     }, [])
     return (
         <div className="homePage">

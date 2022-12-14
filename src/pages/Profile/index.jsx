@@ -3,7 +3,7 @@ import ProfileInfo from './components/ProfileInfo'
 import './index.scss'
 function Profile() {
     useEffect(() => {
-        document.title = 'Profile'
+        document.title = 'Trang cá nhân'
     }, [])
     return (
         <div className="profile">

@@ -102,7 +102,9 @@ function UpdateDoctor() {
             setDataSpecialist(dataSpecialist.message)
         })()
     }, [])
-
+    useEffect(() => {
+        document.title = 'Cập nhật bác sĩ'
+    }, [])
     return (
         <div className="addDoctor">
             <div className="addDoctor__container">

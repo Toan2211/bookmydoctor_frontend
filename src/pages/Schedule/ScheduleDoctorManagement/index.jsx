@@ -138,6 +138,9 @@ function ScheduleDoctorManagement() {
             }
         })()
     }
+    useEffect(() => {
+        document.title = 'Quản lí lịch khám'
+    }, [])
     return (
         <div className="scheduleDoctorManagement">
             <div className="scheduleDoctorManagement__container">

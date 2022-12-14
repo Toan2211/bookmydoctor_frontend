@@ -60,7 +60,7 @@ function BookTimeTable({ doctor }) {
             }
         })()
     }, [day, doctorId])
-    const [selectedDate, setSelectedDate] = useState(new Date())
+    const [selectedDate, setSelectedDate] = useState(new Date(dataDay[0].value))
     const handleDateChange = date => {
         setSelectedDate(date)
         setDay(strftime('%Y-%m-%d', date))

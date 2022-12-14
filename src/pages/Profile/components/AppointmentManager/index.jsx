@@ -104,6 +104,39 @@ function AppointmentManager() {
     const handlePageChange = (page) => {
         getAllAppointmentFromAPI(page)
     }
+    const handleSubmitReviewForm = (appointmentDataId, rate) => {
+        try {
+            ( async () => {
+                await appointmentApi.ratingAppointment(
+                    appointmentDataId,
+                    { scores: rate },
+                    {
+                        headers: {
+                            Authorization: `${localStorage.getItem(
+                                'access_token'
+                            )}`
+                        }
+                    }
+                )
+                // fetchListAppointment(queryParams)
+                toast.success('Đánh giá thành công', {
+                    position: toast.POSITION.BOTTOM_RIGHT,
+                    autoClose: 2000
+                })
+                setIsShowReview(false)
+                getAllAppointmentFromAPI()
+            })()
+        }
+        catch (err) {
+            toast.error(err.message, {
+                position: toast.POSITION.BOTTOM_RIGHT,
+                autoClose: 2000
+            })
+        }
+    }
+    useEffect(() => {
+        document.title = 'Quản lí cuộc hẹn'
+    }, [])
     return (
         <div className="appointmentManager">
             <div className="appointmentManager__container">
@@ -148,7 +181,7 @@ function AppointmentManager() {
                 <Pagination totalPage={pagination.totalPages} currentPage={pagination.page} onClick = {handlePageChange}/>
             </div>
             {isShowAppointmentItemDetail && <AppointmentDetail appointmentData = {AppointmentItemDetail} onClose = {toggleShowItem} confirmAppointment = {confirmAppointment}/>}
-            {isShowReview && <ReviewDialog appointmentData = {AppointmentItemDetail} onClose = {toggleShowReview}/>}
+            {isShowReview && <ReviewDialog appointmentData = {AppointmentItemDetail} onClose = {toggleShowReview} handleSubmitReviewForm = {handleSubmitReviewForm} />}
         </div>
     )
 }

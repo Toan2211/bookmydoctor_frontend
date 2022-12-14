@@ -59,6 +59,9 @@ function DoctorManagement() {
             }
         })()
     }, [queryParams])
+    useEffect(() => {
+        document.title = 'Quản lí bác sĩ'
+    }, [])
     if (isLoading) return <Loading />
     return (
         <div className="doctorManagement">

@@ -1,42 +1,13 @@
-import appointmentApi from 'api/appointmentApi'
 import React, { useState } from 'react'
 import { AiFillStar } from 'react-icons/ai'
-import { toast } from 'react-toastify'
 import './index.scss'
-function ReviewDialog({ onClose, appointmentData }) {
+function ReviewDialog({ onClose, appointmentData, handleSubmitReviewForm }) {
     const handleOnClick = e => {
         if (e.target.className === 'reviewDialog') onClose()
     }
     const [rate, setRate] = useState(5)
     const arr = [1, 2, 3, 4, 5]
-    const handleSubmitForm = () => {
-        try {
-            ( async () => {
-                await appointmentApi.ratingAppointment(
-                    appointmentData.id,
-                    { scores: rate },
-                    {
-                        headers: {
-                            Authorization: `${localStorage.getItem(
-                                'access_token'
-                            )}`
-                        }
-                    }
-                )
-                // fetchListAppointment(queryParams)
-                toast.success('Đánh giá thành công', {
-                    position: toast.POSITION.BOTTOM_RIGHT,
-                    autoClose: 2000
-                })
-            })()
-        }
-        catch (err) {
-            toast.error(err.message, {
-                position: toast.POSITION.BOTTOM_RIGHT,
-                autoClose: 2000
-            })
-        }
-    }
+
     return (
         <div className="reviewDialog" onClick={handleOnClick}>
             <div className="reviewDialog__container">
@@ -71,7 +42,7 @@ function ReviewDialog({ onClose, appointmentData }) {
                     Mời bạn đánh giá chất lượng dịch vụ của chúng tôi !
                 </div>
                 <div className= "reviewDialog__button">
-                    <button type="submit" onClick={handleSubmitForm} className = " btnReview">
+                    <button type="submit" onClick={() => handleSubmitReviewForm(appointmentData.id, rate)} className = " btnReview">
                         Đánh giá
                     </button>
                 </div>

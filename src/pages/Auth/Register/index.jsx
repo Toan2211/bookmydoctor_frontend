@@ -75,7 +75,7 @@ function Register() {
         })()
     }
     useEffect(() => {
-        document.title = 'Register'
+        document.title = 'Đăng ký'
     }, [])
     return (
         <div className="authform">

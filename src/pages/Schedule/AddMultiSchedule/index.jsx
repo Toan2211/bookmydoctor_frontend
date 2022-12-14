@@ -118,6 +118,9 @@ function AddMultiSchedule({ onClose }) {
         })
         setWeekDaysSubmit(weekdaysShow)
     }, [startDate, endDate])
+    useEffect(() => {
+        document.title = 'Tạo lịch khám'
+    }, [])
     return (
         <div className="addMultiSchedule" onClick={handleOnClick}>
             <div className="addMultiSchedule__container">

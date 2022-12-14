@@ -20,6 +20,9 @@ function DetailDoctor() {
             }
         })()
     }, [id])
+    useEffect(() => {
+        document.title = doctor.user ? doctor.user.firsname + doctor.user.lastname : ''
+    }, [doctor])
     if (isLoading) return <Loading />
     return (
         <div className="detailDoctor">

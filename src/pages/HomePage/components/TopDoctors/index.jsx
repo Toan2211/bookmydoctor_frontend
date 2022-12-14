@@ -1,4 +1,5 @@
 import doctorApi from 'api/doctorApi'
+import DoctorItemSkeleton from 'components/DoctorItemSkeleton'
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import DoctorItem from '../../../../components/DoctorItem'
@@ -13,6 +14,8 @@ function TopDoctors() {
         slidesToShow: 4,
         slidesToScroll: 2,
         initialSlide: 0,
+        autoplay: data.length > 0 ? true : false,
+        autoplaySpeed: 3000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -29,7 +32,6 @@ function TopDoctors() {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     dots: false
-
                 }
             }
         ]
@@ -44,9 +46,24 @@ function TopDoctors() {
         <div className="topDoctors">
             <div className="topDoctors__container">
                 <header>Bác sĩ tiêu biểu</header>
-                <Slider {...settings}>
-                    {data.map(doctor => <DoctorItem data = {doctor} key = {doctor.id} />)}
-                </Slider>
+                {data.length > 0 ? (
+                    <Slider {...settings}>
+                        {data.map(doctor => (
+                            <DoctorItem
+                                data={doctor}
+                                key={doctor.id}
+                            />
+                        ))}
+                    </Slider>
+                ) : (
+                    <Slider {...settings}>
+                        {Array(6)
+                            .fill(1)
+                            .map((item, index) => (
+                                <DoctorItemSkeleton key={index} />
+                            ))}
+                    </Slider>
+                )}
             </div>
         </div>
     )

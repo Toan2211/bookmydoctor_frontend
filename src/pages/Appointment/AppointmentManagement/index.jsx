@@ -226,6 +226,9 @@ function AppointmentManagement() {
         const params = { ...queryParams, date: strftime('%Y-%m-%d', date), page: 0 }
         navigate(`?${queryString.stringify(params)}`)
     }
+    useEffect(() => {
+        document.title = 'Quản lí cuộc hẹn'
+    }, [])
     return (
         <div className="appointmentManagement">
             <div className="appointmentManagement__container">
