@@ -16,7 +16,7 @@ function App() {
 
     const socket = useMemo(
         () =>
-            io('https://bookmydoctor.onrender.com', {
+            io('https://book-my-doctor-api.onrender.com', {
                 transports: ['websocket']
             }),
         []
